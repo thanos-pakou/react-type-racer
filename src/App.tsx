@@ -14,7 +14,6 @@ const StyledApp = styled.div`
     ${tw`text-blue-500 bg-gray-200 p-4`}
   }
 `;
-
 function App() {
 
   return (
@@ -26,3 +25,5 @@ function App() {
     </>
   )
 }
+
+export default App

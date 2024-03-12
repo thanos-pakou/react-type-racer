@@ -13,3 +13,6 @@ build/
 # Ignore editor-specific files
 .vscode/
 .idea/
+
+# Ignore coverage reports
+coverage/
