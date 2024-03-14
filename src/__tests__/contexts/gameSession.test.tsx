@@ -28,7 +28,31 @@ describe('Testing the gameSession context', () => {
         let gameSessionMockCurrent = gameSessionMock.current;
         // Assert initial values
         expect(gameSessionMockCurrent.gameIsRunning).toBe(false);
-        expect(gameSessionMockCurrent.gameText.current).toBe('Test text');
+        
+        const testVar = [
+            [
+                [
+                    [
+                        { character: "T", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: "e", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: "s", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: "t", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: " ", status: "", mistakes: 0, timestamp: [], attempts: 0 }
+                    ],
+                    [
+                        { character: "t", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: "e", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: "x", status: "", mistakes: 0, timestamp: [], attempts: 0 },
+                        { character: "t", status: "", mistakes: 0, timestamp: [], attempts: 0 }
+                    ]
+                ]
+            ],
+            9
+        ];
+        // expect(gameSessionMockCurrent.gameText.current).toBe('Test text');
+        expect(gameSessionMockCurrent.gameText.current as [Array<Array<Array<Array<{ 
+            character: string; status: string; mistakes: number; timestamp: Array<number>; 
+            attempts: number; }>>>>, number]).toEqual(testVar);
         expect(gameSessionMockCurrent.gameSessionIndex).toEqual({ sentence: 0, word: 0, char: 0 });
         expect(gameSessionMockCurrent.gameTotalIndex.current).toBe(0);
 
