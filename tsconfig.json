@@ -19,7 +19,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+
+    }
   },
   "include": ["src", "@testing-library/jest-dom"],
   "references": [{ "path": "./tsconfig.node.json" }]
