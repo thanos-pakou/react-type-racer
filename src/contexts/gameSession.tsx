@@ -3,17 +3,18 @@ import {useTimer, TimerObject} from "../hooks"
 import { textParsingEngine } from "../utils";
 
 // Create a context to handle game session
-const gameSessionContext = createContext({} as GameSessionObject)
+export const gameSessionContext = createContext({} as GameSessionObject)
 
 /**
  * Interface for the game session object
+ * @interface
  */
 export interface GameSessionObject {
     gameText: React.MutableRefObject<[Array<Array<Array<{ 
         character: string; status: string; mistakes: number; 
         timestamp: Array<number>; attempts: number; 
     }>>>, number]>;
-    gameSessionIndex: {sentence: number, word: number, char: number};
+    gameSessionIndex: GameSessionIndexObject;
     setGameSessionIndex: React.Dispatch<React.SetStateAction<{
         sentence: number; word: number; char: number;
     }>>;
@@ -21,6 +22,15 @@ export interface GameSessionObject {
     setGameIsRunning: React.Dispatch<React.SetStateAction<boolean>>;
     gameTotalIndex: React.MutableRefObject<number>;
     timer: TimerObject;
+} 
+
+/**
+ * @interface
+ */
+export interface GameSessionIndexObject {
+    sentence: number; 
+    word: number; 
+    char: number;
 } 
 
 /**
@@ -58,3 +68,6 @@ export const GameSessionProvider: React.FC<{ children: React.ReactNode; targetTe
 };
 
 export const useGameSession = () => useContext(gameSessionContext)
+
+exports.GameSessionProvider = GameSessionProvider;
+exports.gameSessionContext = gameSessionContext;

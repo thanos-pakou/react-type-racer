@@ -1,7 +1,6 @@
 import { renderHook, act} from '@testing-library/react';
-import { useGameSession, GameSessionProvider } from '../../contexts';
-import { describe, it, expect, beforeEach } from 'vitest';
-import { afterEach } from 'node:test';
+import { useGameSession, GameSessionProvider } from '@/contexts';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 
 describe('Testing the gameSession context', () => {

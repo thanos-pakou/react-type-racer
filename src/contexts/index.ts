@@ -1,2 +1,6 @@
-export { useGameSession, GameSessionProvider } from "./gameSession";
-export type { GameSessionObject } from "./gameSession";
+export {
+    useGameSession,
+    GameSessionProvider,
+    gameSessionContext,
+} from "./gameSession";
+export type { GameSessionObject, GameSessionIndexObject } from "./gameSession";
